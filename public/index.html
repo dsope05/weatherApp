@@ -20,7 +20,6 @@
 	const searchBtn = document.getElementById('search-btn')
 	searchBtn.onclick = () => {
 		const city = document.getElementById('search-input').value;	
-		console.log('city', city)
 		fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=fefdc40d2ca6234e68cfd78180a73ada&units=metric`)
     .then((response) => response.json())
     .then(data => {
