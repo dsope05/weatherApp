@@ -2,7 +2,7 @@
 
 const fetchWeatherData = () => {
 		const city = document.getElementById('search-input').value;	
-    fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city},${840}&appid=fefdc40d2ca6234e68cfd78180a73ada&units=metric`)
+    fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city},${840}&appid=fefdc40d2ca6234e68cfd78180a73ada&units=imperial`)
     .then((response) => response.json())
     .then(data => {
 	    if (!data.name) {
