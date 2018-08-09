@@ -27,7 +27,10 @@
 .then(data => {
 	const weatherDiv = document.getElementById('weather-data')
 	if (!data.name) {
-		weatherDiv.innerHTML = 'City Not Found'
+		weatherDiv.innerHTML = `
+			<div class='error-message'>
+				${data.message}!
+			</div>`
 		return;
 	} 
 	const weatherChild =
@@ -39,7 +42,7 @@
 				${data.weather[0].description}
 </span>
 			<p>
-				${data.main.temp}°C temperature from ${data.main.temp_min}°C to ${data.main.temp_max}°C, wind ${data.wind.speed} m/s. clouds ${data.clouds.all}%, ${data.main.pressure} hpa
+				${data.main.temp}°F temperature from ${data.main.temp_min}°F to ${data.main.temp_max}°F, wind ${data.wind.speed} m/s, clouds ${data.clouds.all}%, ${data.main.pressure} hpa
 			</p>
 <p>
 Geo Cords: [${data.coord.lon}, ${data.coord.lat}]

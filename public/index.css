@@ -43,3 +43,7 @@ body {
   font-style: italic;
   font-weight: bold;
 }
+
+.error-message{
+  margin-top: 10px;
+}
